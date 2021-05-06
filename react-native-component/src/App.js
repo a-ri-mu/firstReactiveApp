@@ -1,16 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import MyButton from './components/MyButton';
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        Button Component
+        My Button Component
       </Text>
-      <Button title="Button" onPress={() => alert('Click !!!')}/>
+      <MyButton />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -24,3 +25,5 @@ const styles = StyleSheet.create({
     marginBottom : 10,
   },
 });
+
+export default App;
