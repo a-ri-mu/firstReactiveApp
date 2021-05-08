@@ -1,11 +1,13 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import EventBtn_Pressable from './components/EventBtn_Pressable';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import EventInput from './components/EventInput';
+import EventButton from './components/EventButton';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <EventBtn_Pressable/>
+      <EventButton />   
+      <EventInput />
     </View>
   );
 };
@@ -13,9 +15,9 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent : 'center',
     backgroundColor: '#fff',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   text: {
     fontSize : 30,
