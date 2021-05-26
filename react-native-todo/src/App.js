@@ -1,16 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import styled, { ThemeProvider } from 'styled-components/native';
+import {theme} from './theme'
+import {StatusBar} from 'react-native';
+import Input from './components/Input';
+
+const Container = styled.View`
+flex:1;
+background-color: ${({theme}) => theme.backgroud};
+align-items:center;
+justify-content:flex-start;
+`;
+
+const Title = styled.Text`
+font-size:40px;
+font-weight:600;
+color:${({theme}) => theme.main};
+align-self:flex-start;
+margin: 0px 20px;
+`;
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <StatusBar
+        barStyle="light-content"
+        backgroundColor={theme.backgroud}
+        />
+        <Title>TODO List</Title>
+        <Input/>
+      </Container>
+    </ThemeProvider>
   );
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -19,3 +43,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
